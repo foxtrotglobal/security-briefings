@@ -1,0 +1,28 @@
+name: decode-pdfs
+on:
+  push:
+    branches: [main]
+    paths: ['b64/**']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode base64 PDFs into pdf/
+        run: |
+          mkdir -p pdf
+          for f in b64/*.pdf.b64; do
+            name=$(basename "$f" .b64)
+            base64 -d "$f" > "pdf/$name"
+          done
+          git rm -q -r b64
+          sha256sum pdf/*.pdf
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add pdf
+          git commit -m "Add PDF (decoded)" && git push
