@@ -1,6 +1,6 @@
 # Security Briefings
 
-Open-source threat, safety and travel briefings for the public, published at **https://foxtrotglobal.github.io/security-briefings/**
+OSINT threat, safety and travel briefings for the public, published at **https://foxtrotglobal.github.io/security-briefings/**
 
 ## Posts
 - **United States Threat Assessment: Thanksgiving 2026 (Nationwide)**, 23 Nov 2026. National rating: ELEVATED.
@@ -12,4 +12,4 @@ Open-source threat, safety and travel briefings for the public, published at **h
 2. Add a card for it at the top of the `posts` section in `index.html`.
 3. Optional PDF: put it in `pdf/`.
 
-UNCLASSIFIED // OPEN SOURCE. Compiled from public reporting; not an official government product.
+UNCLASSIFIED // OSINT. Compiled from public reporting; not an official government product.
